@@ -1,3 +1,5 @@
+cmake_minimum_required(VERSION 2.6)
+
 set(MY_PROJ thread_c11_test)
 project(${MY_PROJ})
 
@@ -11,7 +13,7 @@ elseif(NOT MSVC)
   set(CMAKE_C_COMPILER gcc)
   set(CMAKE_C_FLAGS "-m32 -std=c99 -fno-strict-aliasing -fno-builtin -fno-common -g -ffloat-store -Wno-multichar -Wimplicit-function-declaration")
   set(CMAKE_CXX_COMPILER g++)
-  set(CMAKE_CXX_FLAGS "-m32 -std=c++11 -fno-strict-aliasing -fno-builtin -fno-common -g -ffloat-store -Wno-multichar")
+  set(CMAKE_CXX_FLAGS "-m32 -std=c++11 -pthread -fno-strict-aliasing -fno-builtin -fno-common -g -ffloat-store -Wno-multichar")
 endif()
 
 include_directories(
